@@ -6,7 +6,16 @@ const Student = require('../models/student')
 // get all students
 router.get('/allstudents', async (req, res) => {
     try{
+        // const page = req.query.page
+        // const limit = req.query.limit
+
+        // const startIndex = (page-1)*limit
+        // const endIndex = page*limit
+
         const students = await Student.find()
+        // const resultStudent = students.slice(startIndex, endIndex)
+        // const count = students.length
+        // res.json({student: resultStudent, count: count })
         res.json(students)
     } catch(err){
         res.status(500).json({ message: err.message })
