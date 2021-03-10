@@ -20,7 +20,7 @@ class StudentList extends Component {
                     allStudentsArray: res.data,
                     count: res.data.length
                 }, () => {
-                    this.state.allStudents.map((ele, index) => (
+                    this.state.allStudents.length>0 && this.state.allStudents.map((ele, index) => (
                         ele.sNo = index+1
                     ))
                     this.getData(0)
